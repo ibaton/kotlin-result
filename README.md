@@ -32,6 +32,8 @@ allprojects {
 ```
 
 **Step 2.** Add the dependency
+
+[![](https://jitpack.io/v/ibaton/kotlin-result.svg)](https://jitpack.io/#ibaton/kotlin-result)
 ```
 dependencies {
   implementation 'com.github.ibaton:kotlin-result:Tag'
