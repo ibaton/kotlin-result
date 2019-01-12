@@ -8,14 +8,14 @@ sealed class Result<out T> {
     /**
      * Successful operation
      */
-    data class Success<out T: Any>(val value: T): Result<T>(){
+    data class Success<out T>(val value: T): Result<T>(){
         override fun unwrap(): Pair<T?, Throwable?> = Pair<T?, Throwable?>(value, null)
     }
 
     /**
      * Failed operation
      */
-    data class Failure<out T: Any>(val throwable: Throwable): Result<T>(){
+    data class Failure<out T>(val throwable: Throwable): Result<T>(){
         override fun unwrap(): Pair<T?, Throwable?> = Pair<T?, Throwable?>(null, throwable)
     }
 
