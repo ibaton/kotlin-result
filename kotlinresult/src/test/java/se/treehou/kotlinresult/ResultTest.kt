@@ -8,7 +8,7 @@ import java.lang.NumberFormatException
 class ResultTest {
     @Test
     fun result_unwrapSuccess() {
-        val (value, throwable) = Result.Success("Success").unwrap()
+        val (value, throwable) = Result.Success("Success")
 
         assertEquals("Success", value)
         assertEquals(null, throwable)
@@ -17,9 +17,9 @@ class ResultTest {
     @Test
     fun result_unwrapFailure() {
         val exception = NumberFormatException()
-        val (value, throwable) = Result.Failure<String>(exception).unwrap()
+        val (value, wrappedThrowable) = Result.Failure<String>(exception)
 
         assertEquals(null, value)
-        assertEquals(exception, throwable)
+        assertEquals(exception, wrappedThrowable)
     }
 }

@@ -1,5 +1,6 @@
-[![](https://jitpack.io/v/ibaton/kotlin-result.svg)](https://jitpack.io/#ibaton/kotlin-result)
 # Kotlin-Result
+[![](https://jitpack.io/v/ibaton/kotlin-result.svg)](https://jitpack.io/#ibaton/kotlin-result)
+
 Used to wrap results from operations that returns success or fauilure.
 
 ## USAGE
@@ -12,7 +13,7 @@ val failure: Optional<String> = Optional.Failure(throwable)
 ### Unwrap
 ```
 val optional: Optional<String> = Optional.Success("value")
-val (value, throwable) = optional.unwrap()
+val (value, throwable) = optional
 
 when(optional){
   is Success -> optional.value // Do something with value
