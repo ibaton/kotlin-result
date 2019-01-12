@@ -1,1 +1,1 @@
-# kotlinresult
+# Kotlin-Result
