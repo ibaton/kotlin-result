@@ -53,6 +53,6 @@ sealed class Result<out T> {
 
     }
 
-    abstract fun component1(): T?
-    abstract fun component2(): Throwable?
+    abstract operator fun component1(): T?
+    abstract operator fun component2(): Throwable?
 }
