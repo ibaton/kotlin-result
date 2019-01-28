@@ -26,6 +26,10 @@ sealed class Result<out T> {
         override fun hashCode(): Int {
             return value?.hashCode() ?: 0
         }
+
+        override fun toString(): String {
+            return "Success($value)"
+        }
     }
 
     /**
@@ -50,7 +54,9 @@ sealed class Result<out T> {
             return throwable.hashCode()
         }
 
-
+        override fun toString(): String {
+            return "Failure($throwable)"
+        }
     }
 
     abstract operator fun component1(): T?
