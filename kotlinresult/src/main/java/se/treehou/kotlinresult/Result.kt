@@ -55,4 +55,15 @@ sealed class Result<out T> {
 
     abstract operator fun component1(): T?
     abstract operator fun component2(): Throwable?
+
+
+    /**
+     * Map value if Some
+     */
+    fun <Y : Any> map(function: (T)->Y): Result<Y> {
+        return when(this){
+            is Success -> Success(function(value))
+            is Failure -> Failure(throwable)
+        }
+    }
 }
