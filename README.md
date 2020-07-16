@@ -6,18 +6,18 @@ Used to wrap results from operations that returns success or fauilure.
 ## USAGE
 ### Wrap
 ```
-val success: Optional<String> = Optional.Success("value")
-val failure: Optional<String> = Optional.Failure(throwable)
+val success: Result<String> = Result.Success("value")
+val failure: Result<String> = Result.Failure(throwable)
 ```
 
 ### Unwrap
 ```
-val optional: Optional<String> = Optional.Success("value")
-val (value, throwable) = optional
+val optional: Result<String> = Result.Success("value")
+val (value, throwable) = c
 
-when(optional){
-  is Success -> optional.value // Do something with value
-  is Failure -> optional.throwable // Do something with throwable
+when(result){
+  is Success -> result.value // Do something with value
+  is Failure -> result.throwable // Do something with throwable
 }
 ```
 
